@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <mate>  name="keywords" content="牛仔裤，裤子"></mate>    搜索的关键字
+    <mate name="discription" content="牛仔裤，裤子"></mate>  百度搜索页面的简介
+    <title></title>
+    <style>
+        h1{
+            标签/元素选择器 权重值1
+        }
+    #menu{
+        id选择器 权重值100
+       }
+    .submenu{
+        类选择器 权重值10
+    }
+    </style>
+    .a .b .c{
+        权重值可以相加，但是id最大
+        后代选择器
+    }
+    #menu > li{
+        子代选择器 i6不支持
+    }
+    伪类选择器：   ：hover i6只能a加
+                   link
+                   visited
+                   active
+    #menu,#div{
+        分组选择器
+    }
+    #div1.aa{
+        多类选择器
+        多个属性不加空格
+        <div id="div1" class="aa">
+    }
+     w3c盒模型 div的宽高是内容的大小，所以加padding会撑大
+    父子元素，子元素设置margin的时候  父元素会跟着一起掉下去  给父元素添加一个溢出隐藏 overflow:hidden;就好了
+    兄弟元素，上边设置下外元素，下边设置上外元素，最后相距的距离是最大值  不是和。
+    清楚浮动，不影响下面的用clear：both；
+    line-height  只能单行
+    undefined 和null ==  返回ture  === 返回false
+    getElementsByTagName   返回的不是实质的数组，是节点列表。
+            aSubMenu[this.index].style.display   只能取到内联函数style的display
+</head>
+<body>
+ <script>
+    var o = new Object();
+    o.name='lisi';
+    o.age=18;
+    o.school='linda';
+     for(var p in o){
+         console.log(p+":"+o[p]);   //o.name  固定的值。o【‘name’】不固定的值
+     }
+     var obj = {
+         name:"lisi",
+         age:18
+     };
+</script>
+</body>
+</html>

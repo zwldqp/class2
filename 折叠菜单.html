@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        ul,ol{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu{
+            width: 200px;
+        }
+        #menu h3{
+            height: 40px;
+            color: #000;
+            line-height: 40px;
+            cursor: pointer;
+            background: #cccccc;
+        }
+        #menu .sub-menu li{
+            height: 40px;
+            color: #000;
+            line-height: 40px;
+            cursor: pointer;
+        }
+       #menu .sub-menu{
+           display: none;
+       }
+        #menu li,h3{
+            background: #eee;
+            border-bottom: 1px dashed #fff;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li class="main-menu">
+        <h3 onselectstart="return false">管理区</h3>
+        <ul class="sub-menu">
+            <li><a>zz1</a></li>
+            <li><a>zz2</a></li>
+            <li><a>zz2</a></li>
+        </ul>
+    </li>
+    <li class="main-menu">
+        <h3 onselectstart="return false">交流区</h3>
+        <ul class="sub-menu">
+            <li> <a>zz3</a></li>
+            <li> <a>zz4</a></li>
+            <li> <a>zz4</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+//    绑定h3事件
+//    var oMenu = document.getElementById('menu');
+//    var aH3 = oMenu.getElementsByTagName('h3');
+//    var aSubMenu = oMenu.getElementsByTagName('ul');
+//    for(var i = 0;i<aH3.length;i++){
+//        aH3[i].index=i;
+//        aH3.flag=1;
+//        aH3[i].onclick=function(){
+//            if(this.flag==1)
+//            {aSubMenu[this.index].style.display='block';
+//                this.flag=0;}
+//            else
+//             {aSubMenu[this.index].style.display='none';
+//                this.flag=1;}
+//        };
+//    }
+
+//绑定li main-menu事件
+    var oMenu = document.getElementById('menu');
+    var aLi = oMenu.getElementsByTagName('li');
+    for(var i = 0;i<aLi.length;i++){
+        if(aLi[i].className=='main-menu'){
+            aLi.flag=false;
+            aLi[i].onclick = function(){
+                if(this.flag){
+                    this.getElementsByTagName('ul')[0].style.display='none';
+                }else{
+                    this.getElementsByTagName('ul')[0].style.display='block';
+                }
+                this.flag=!this.flag;
+            };
+        }
+}
+</script>
+</body>
+</html>
