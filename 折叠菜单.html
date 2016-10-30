@@ -77,8 +77,6 @@
 //    }
 
 
-
-
 //用jq方法实现
     var oMenu = document.getElementById('menu');
     var aH3 = oMenu.getElementsByTagName('h3');
@@ -109,7 +107,15 @@
     }while(elem && elem.nodeType!=1); //nodeType等于1时是元素节点  用&&增加条件判断elem是否是有效值 防止没有兄弟节点时死循环报错
     return elem;
 }
+//<div id="div1">
+//    <h1>hhh</h1>
+//    <p>ppp</p>
+//</div>
 
+//    var oDiv = document.getElementById('div1');
+//    console.log(oDiv.children); //2个  h1 p
+//    console.log(oDiv.childNodes);//text h1 text p text 空格也算子元素 div与h1之间有空格 ie不支持  注释不是text文本 是另一种
+//    console.log(oDiv.nextElementSibling);//下一个元素节点  ie不支持
 
 
 //绑定li main-menu事件
